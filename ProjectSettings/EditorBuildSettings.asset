@@ -6,21 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/RealisticSlotMachine/Scenes/0_Lobby.unity
+    path: Assets/StorePackages/RealisticSlotMachine/Scenes/0_Lobby.unity
     guid: 126811d64807aa14b9424800f08ef417
   - enabled: 1
-    path: Assets/RealisticSlotMachine/Scenes/1_Slot_3X3_FruitHold.unity
+    path: Assets/StorePackages/RealisticSlotMachine/Scenes/1_Slot_3X3_FruitHold.unity
     guid: 4f217c0aaaf76304e938c9b589b05fb0
   - enabled: 1
-    path: Assets/RealisticSlotMachine/Scenes/2_Slot_3X3_Classsic.unity
+    path: Assets/StorePackages/RealisticSlotMachine/Scenes/2_Slot_3X3_Classsic.unity
     guid: bfa02e3c9d8d2cd4f84a2f43aae50040
   - enabled: 1
-    path: Assets/RealisticSlotMachine/Scenes/3_Slot_3X5_Classic.unity
+    path: Assets/StorePackages/RealisticSlotMachine/Scenes/3_Slot_3X5_Classic.unity
     guid: fae7a0e7acda41d459be7889e1d8dff7
   - enabled: 1
-    path: Assets/RealisticSlotMachine/Scenes/4_Slot_3X5_243Ways.unity
+    path: Assets/StorePackages/RealisticSlotMachine/Scenes/4_Slot_3X5_243Ways.unity
     guid: 1b6f9adcaed688a46b4fe931f655bb69
   - enabled: 1
-    path: Assets/RealisticSlotMachine/Scenes/5_Slot_3X5_Bonus.unity
+    path: Assets/StorePackages/RealisticSlotMachine/Scenes/5_Slot_3X5_Bonus.unity
     guid: e9b879489f886b243a3337c1fd965412
   m_configObjects: {}
