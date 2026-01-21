@@ -6,6 +6,6 @@ public class ObstcleChoice : MonoBehaviour
 {
     public void ShowChoice()
     {
-
+        GamePlay.Instance.LoadSlotScene();
     }
 }

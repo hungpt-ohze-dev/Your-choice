@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private UIGameScreen gameScreen;
 
+    private ObstcleChoice obstcleChoice;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -87,6 +89,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!canChoice) return;
 
+        obstcleChoice.ShowChoice();
         Debug.Log("Choice");
     }
 
@@ -95,6 +98,8 @@ public class PlayerController : MonoBehaviour
         if(Utils.CheckLayerMaskCollier2D(colMask, other))
         {
             canChoice = true;
+
+            obstcleChoice = other.GetComponent<ObstcleChoice>();
         }
     }
 
@@ -103,6 +108,8 @@ public class PlayerController : MonoBehaviour
         if (Utils.CheckLayerMaskCollier2D(colMask, other))
         {
             canChoice = false;
+
+            obstcleChoice = null;
         }
     }
 }

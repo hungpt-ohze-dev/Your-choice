@@ -2,8 +2,11 @@ using com.homemade.modules.audio;
 using com.homemade.pattern.observer;
 using com.homemade.pattern.singleton;
 using Cysharp.Threading.Tasks;
+using System;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GamePlay : MonoSingleton<GamePlay>
 {
@@ -158,5 +161,29 @@ public class GamePlay : MonoSingleton<GamePlay>
     }
 
     #endregion
+
+    // Load slot scene
+    public void LoadSlotScene()
+    {
+        StartCoroutine(LoadAsync("1_Slot_3X3_FruitHold"));
+    }
+
+    IEnumerator LoadAsync(string sceneName)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+
+        while (!operation.isDone)
+        {
+            //Debug.Log("Loading: " + (operation.progress * 100) + "%");
+            yield return null;
+        }
+
+        MonoScene.Instance.SetActiveScene(sceneName);
+    }
+
+    public void RemoveSlotScene()
+    {
+        SceneManager.UnloadSceneAsync("1_Slot_3X3_FruitHold");
+    }    
 
 }

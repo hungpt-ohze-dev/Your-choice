@@ -6,21 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/StorePackages/RealisticSlotMachine/Scenes/0_Lobby.unity
-    guid: 126811d64807aa14b9424800f08ef417
+    path: Assets/Scenes/Splash.unity
+    guid: 212a5eeeace801c4083af8f62251a613
   - enabled: 1
-    path: Assets/StorePackages/RealisticSlotMachine/Scenes/1_Slot_3X3_FruitHold.unity
-    guid: 4f217c0aaaf76304e938c9b589b05fb0
+    path: Assets/Scenes/Main.unity
+    guid: fa2f3dc3bbe583b4988407ea5b705e70
   - enabled: 1
-    path: Assets/StorePackages/RealisticSlotMachine/Scenes/2_Slot_3X3_Classsic.unity
-    guid: bfa02e3c9d8d2cd4f84a2f43aae50040
-  - enabled: 1
-    path: Assets/StorePackages/RealisticSlotMachine/Scenes/3_Slot_3X5_Classic.unity
-    guid: fae7a0e7acda41d459be7889e1d8dff7
-  - enabled: 1
-    path: Assets/StorePackages/RealisticSlotMachine/Scenes/4_Slot_3X5_243Ways.unity
-    guid: 1b6f9adcaed688a46b4fe931f655bb69
-  - enabled: 1
-    path: Assets/StorePackages/RealisticSlotMachine/Scenes/5_Slot_3X5_Bonus.unity
-    guid: e9b879489f886b243a3337c1fd965412
+    path: Assets/Scenes/GamePlay.unity
+    guid: b562dcd0674cbbe4f84d344754c5a4f7
   m_configObjects: {}
