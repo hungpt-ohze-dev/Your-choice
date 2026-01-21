@@ -12,7 +12,8 @@ public class GamePlay : MonoSingleton<GamePlay>
     [SerializeField] private bool canTouch;
 
     [Header("Player")]
-    public PlayerController player;
+    [SerializeField] private PlayerController player;
+    [SerializeField] private RoomController room;
 
     // Get static
     public static bool LevelSetupDone = false;
@@ -22,6 +23,8 @@ public class GamePlay : MonoSingleton<GamePlay>
         set => Instance.canTouch = value;
     }
     public static PlatformEnum TargetPlatform => Instance.platformID;
+    public static PlayerController Player => Instance.player;
+    public static RoomController Room => Instance.room;
 
     // Private variable
     private LevelSave levelSave;
@@ -102,7 +105,13 @@ public class GamePlay : MonoSingleton<GamePlay>
         // Release all sound
         await UniTask.DelayFrame(1);
 
+        room.Init();
         player.Init();
+
+        await UniTask.DelayFrame(1);
+        room.LoadRoom(levelSave.roomId);
+
+
         //AudioController.Instance.ReleaseSounds();
 
         // Music background

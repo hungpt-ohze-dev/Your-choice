@@ -23,7 +23,7 @@ public class UIHomeScreen : BaseScreen
     {
         base.Show();
 
-        levelTxt.text = $"Level {levelSave.levelId}";
+        levelTxt.text = $"Level {levelSave.roomId}";
         coinInfo.UpdateInfo();
 
     }
