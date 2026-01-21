@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4ea9168fb8d3b4aba9737a2ff05106, type: 3}
+  m_Name: SOPixelConfig
+  m_EditorClassIdentifier: 
+  pixelConfigs:
+  - id: 0
+    color: {r: 0, g: 0, b: 0, a: 0}
+    colorGame: {r: 0, g: 0, b: 0, a: 0}
+    texture: {fileID: 21300000, guid: 9cecbf1e713c30a4e86f4f7436400d3f, type: 3}
+  - id: 1
+    color: {r: 0, g: 0, b: 0, a: 1}
+    colorGame: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    texture: {fileID: 21300000, guid: 370bb79bbb7dfe247a99e3472a8f9406, type: 3}
+  - id: 2
+    color: {r: 0.8745098, g: 0.40784314, b: 0.09411765, a: 1}
+    colorGame: {r: 0.8745098, g: 0.40784314, b: 0.09411765, a: 1}
+    texture: {fileID: 21300000, guid: c54da28a00176e942821f1832780bfae, type: 3}
+  - id: 3
+    color: {r: 0.59607846, g: 0.4509804, b: 0.3764706, a: 1}
+    colorGame: {r: 0.59607846, g: 0.4509804, b: 0.3764706, a: 1}
+    texture: {fileID: 21300000, guid: 7009b7abbd7b6a841a14447c1d979758, type: 3}
+  - id: 4
+    color: {r: 0.78039217, g: 0.6039216, b: 0.4745098, a: 1}
+    colorGame: {r: 0.69803923, g: 0.5176471, b: 0.38431373, a: 1}
+    texture: {fileID: 21300000, guid: ce4311df120d2ad4c96b9cc5e01d79c7, type: 3}
+  - id: 5
+    color: {r: 0.8745098, g: 0.47843137, b: 0.42352942, a: 1}
+    colorGame: {r: 0.8745098, g: 0.47843137, b: 0.42352942, a: 1}
+    texture: {fileID: 21300000, guid: 8f7b997ab00fd8b43b15b1e9d80809fd, type: 3}
+  - id: 6
+    color: {r: 0.4627451, g: 0.85490197, b: 0.96862745, a: 1}
+    colorGame: {r: 0.18431373, g: 0.6666667, b: 0.8117647, a: 1}
+    texture: {fileID: 21300000, guid: adb75b3a13f60d844b7d7d779b9ae918, type: 3}
+  - id: 7
+    color: {r: 1, g: 1, b: 1, a: 1}
+    colorGame: {r: 1, g: 1, b: 1, a: 1}
+    texture: {fileID: 21300000, guid: 370c19ea89367004589fc2ae5f2bc018, type: 3}
+  - id: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    colorGame: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    texture: {fileID: 21300000, guid: 7e3aebd8404ce5543a33f249dfb6b1e9, type: 3}
+  - id: 9
+    color: {r: 0.94509804, g: 0.78039217, b: 0.64705884, a: 1}
+    colorGame: {r: 0.94509804, g: 0.78039217, b: 0.64705884, a: 1}
+    texture: {fileID: 21300000, guid: 7ecd58676efa97b4ca9b72759cd0ae39, type: 3}
+  - id: 10
+    color: {r: 0.1764706, g: 0.59607846, b: 0.1882353, a: 1}
+    colorGame: {r: 0.1764706, g: 0.59607846, b: 0.1882353, a: 1}
+    texture: {fileID: 21300000, guid: 5335cb1b75f00c04e8f7e011bcafeb11, type: 3}
+  - id: 11
+    color: {r: 0.87843144, g: 0.654902, b: 0, a: 1}
+    colorGame: {r: 0.8784314, g: 0.654902, b: 0, a: 1}
+    texture: {fileID: 21300000, guid: 43c01eeb73d5ee14e86419cea6b57b64, type: 3}
+  - id: 12
+    color: {r: 0.26666668, g: 0.039215688, b: 0.007843138, a: 1}
+    colorGame: {r: 0.26666668, g: 0.039215688, b: 0.007843138, a: 1}
+    texture: {fileID: 21300000, guid: 604ac8dc78de8aa4da6df763ce4da0e2, type: 3}
+  - id: 13
+    color: {r: 1, g: 0.627451, b: 0.29803923, a: 1}
+    colorGame: {r: 1, g: 0.627451, b: 0.29803923, a: 1}
+    texture: {fileID: 21300000, guid: cf2616be93afc01498576d26e77fb2f7, type: 3}
+  - id: 14
+    color: {r: 1, g: 0.73333335, b: 0.9411765, a: 1}
+    colorGame: {r: 1, g: 0.73333335, b: 0.9411765, a: 1}
+    texture: {fileID: 21300000, guid: 5ab6a6dfe91918a48ac6f27e7ccfbdd2, type: 3}
+  - id: 15
+    color: {r: 1, g: 0.5686275, b: 0.41960785, a: 1}
+    colorGame: {r: 1, g: 0.5686275, b: 0.41960785, a: 1}
+    texture: {fileID: 21300000, guid: ec6c54f7e1f9d5740995615c7fed6331, type: 3}
+  - id: 16
+    color: {r: 0.76862746, g: 0.2784314, b: 0.22745098, a: 1}
+    colorGame: {r: 0.76862746, g: 0.2784314, b: 0.22745098, a: 1}
+    texture: {fileID: 21300000, guid: 30a0285d1c0e01f4cb0ae15043098945, type: 3}
+  - id: 17
+    color: {r: 0.0627451, g: 0.4392157, b: 0.10980392, a: 1}
+    colorGame: {r: 0.0627451, g: 0.4392157, b: 0.10980392, a: 1}
+    texture: {fileID: 21300000, guid: 6b02933eb4233b64bbe09012992a4f4e, type: 3}
+  - id: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    colorGame: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    texture: {fileID: 21300000, guid: f7b715cf0ab51644c89348012da52b6a, type: 3}
+  - id: 19
+    color: {r: 0.62352943, g: 0.07450981, b: 0.972549, a: 1}
+    colorGame: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    texture: {fileID: 21300000, guid: 3dfc44bfada37af4b84795248928e16e, type: 3}
+  - id: 20
+    color: {r: 0.08235294, g: 0.8039216, b: 0.101960786, a: 1}
+    colorGame: {r: 0.08235294, g: 0.8039216, b: 0.101960786, a: 1}
+    texture: {fileID: 21300000, guid: b3fe0ccc9a0cda94cbdfe6e08867fee3, type: 3}
+  - id: 21
+    color: {r: 0.003921569, g: 0.43137255, b: 0.94509804, a: 1}
+    colorGame: {r: 0.003921569, g: 0.43137255, b: 0.94509804, a: 1}
+    texture: {fileID: 21300000, guid: c72fa27eb77d0b947912ffc1c2da76e7, type: 3}
+  - id: 22
+    color: {r: 1, g: 0.5137255, b: 0.7647059, a: 1}
+    colorGame: {r: 1, g: 0.5137255, b: 0.7647059, a: 1}
+    texture: {fileID: 21300000, guid: f096d75d48a84654fa00b9f46a64264c, type: 3}

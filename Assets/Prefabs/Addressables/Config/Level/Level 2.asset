@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c96376cd0daf6c4cbf72bb70877f96d, type: 3}
+  m_Name: Level 2
+  m_EditorClassIdentifier: 
+  pixelConfig: {fileID: 11400000, guid: c581c7e5bf15acc4eb83f821bad5cdd2, type: 2}
+  colorDis: 0.2
+  preivew: {fileID: 2800000, guid: 9592e4dfe0ae5824d9e6356b122c4850, type: 3}
+  levelAsset: {fileID: 4900000, guid: 8c9d1ec1ddc59d540a4b1c70945304ee, type: 3}
+  coinReward: 10
+  gridWidth: 10
+  gridHeight: 10
+  cellSize: 1
+  segmentCountEachKnot: 3
+  arrows:
+  - id: 1
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 3
+    cells:
+    - {x: 7, y: 4}
+    - {x: 6, y: 4}
+    - {x: 5, y: 4}
+    - {x: 5, y: 3}
+  - id: 2
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 2, y: 0}
+    - {x: 2, y: 1}
+    - {x: 2, y: 2}
+    - {x: 1, y: 2}
+    - {x: 0, y: 2}
+  - id: 3
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 7, y: 0}
+    - {x: 7, y: 1}
+    - {x: 7, y: 2}
+    - {x: 7, y: 3}
+  - id: 4
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 6, y: 0}
+    - {x: 6, y: 1}
+    - {x: 6, y: 2}
+    - {x: 6, y: 3}
+  - id: 12
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 0
+    cells:
+    - {x: 6, y: 7}
+    - {x: 6, y: 6}
+    - {x: 6, y: 5}
+  - id: 13
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 0
+    cells:
+    - {x: 7, y: 7}
+    - {x: 7, y: 6}
+    - {x: 7, y: 5}
+  - id: 14
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 4, y: 3}
+    - {x: 4, y: 4}
+    - {x: 3, y: 4}
+    - {x: 3, y: 5}
+  - id: 16
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 7}
+    - {x: 1, y: 7}
+    - {x: 2, y: 7}
+  - id: 18
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 4, y: 5}
+    - {x: 5, y: 5}
+    - {x: 5, y: 6}
+    - {x: 5, y: 7}
+  - id: 19
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 1, y: 1}
+    - {x: 0, y: 1}
+  - id: 21
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 6}
+    - {x: 1, y: 6}
+    - {x: 2, y: 6}
+    - {x: 2, y: 5}
+    - {x: 2, y: 4}
+  - id: 23
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 3, y: 0}
+    - {x: 3, y: 1}
+    - {x: 3, y: 2}
+    - {x: 4, y: 2}
+    - {x: 4, y: 1}
+  - id: 24
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 3}
+    - {x: 1, y: 3}
+    - {x: 2, y: 3}
+  - id: 25
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 0
+    cells:
+    - {x: 5, y: 2}
+    - {x: 5, y: 1}
+    - {x: 5, y: 0}
+  - id: 26
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 3, y: 7}
+    - {x: 4, y: 7}
+    - {x: 4, y: 6}
+    - {x: 3, y: 6}
+  - id: 27
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 3
+    cells:
+    - {x: 1, y: 4}
+    - {x: 0, y: 4}
+    - {x: 0, y: 5}
+    - {x: 1, y: 5}
+  - id: 28
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 3
+    cells:
+    - {x: 9, y: 8}
+    - {x: 8, y: 8}
+    - {x: 7, y: 8}
+    - {x: 6, y: 8}
+  - id: 29
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 9, y: 0}
+    - {x: 9, y: 1}
+    - {x: 9, y: 2}
+    - {x: 9, y: 3}
+    - {x: 9, y: 4}
+  - id: 30
+    colorId: 19
+    color: {r: 0.5921569, g: 0.18039216, b: 0.8509804, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 9}
+    - {x: 1, y: 9}
+    - {x: 2, y: 9}
+    - {x: 3, y: 9}
+    - {x: 3, y: 8}
+  - id: 31
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 8, y: 0}
+    - {x: 8, y: 1}
+    - {x: 8, y: 2}
+    - {x: 8, y: 3}
+  - id: 32
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 0
+    cells:
+    - {x: 9, y: 7}
+    - {x: 9, y: 6}
+    - {x: 8, y: 6}
+    - {x: 8, y: 5}
+  - id: 33
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 3
+    cells:
+    - {x: 9, y: 9}
+    - {x: 8, y: 9}
+    - {x: 7, y: 9}
+    - {x: 6, y: 9}
+    - {x: 5, y: 9}
+    - {x: 5, y: 8}
+  - id: 34
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 0
+    cells:
+    - {x: 4, y: 9}
+    - {x: 4, y: 8}
+  - id: 35
+    colorId: 18
+    color: {r: 0.9764706, g: 0.8862745, b: 0.12156863, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 8}
+    - {x: 1, y: 8}
+    - {x: 2, y: 8}

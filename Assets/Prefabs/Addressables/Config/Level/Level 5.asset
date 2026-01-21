@@ -1,0 +1,188 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c96376cd0daf6c4cbf72bb70877f96d, type: 3}
+  m_Name: Level 5
+  m_EditorClassIdentifier: 
+  pixelConfig: {fileID: 11400000, guid: c581c7e5bf15acc4eb83f821bad5cdd2, type: 2}
+  colorDis: 0.1
+  preivew: {fileID: 2800000, guid: 511bb0b787fd9fe45855bdf1f406b065, type: 3}
+  levelAsset: {fileID: 4900000, guid: d94907d713a38004bb5c73da710da591, type: 3}
+  coinReward: 10
+  gridWidth: 10
+  gridHeight: 10
+  cellSize: 1
+  segmentCountEachKnot: 4
+  arrows:
+  - id: 1
+    colorId: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    headDirection: 3
+    cells:
+    - {x: 7, y: 4}
+    - {x: 6, y: 4}
+    - {x: 5, y: 4}
+  - id: 2
+    colorId: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 6}
+    - {x: 1, y: 6}
+    - {x: 2, y: 6}
+  - id: 3
+    colorId: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 1}
+    - {x: 1, y: 1}
+    - {x: 2, y: 1}
+    - {x: 3, y: 1}
+  - id: 4
+    colorId: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 2, y: 2}
+    - {x: 2, y: 3}
+    - {x: 2, y: 4}
+  - id: 5
+    colorId: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 6, y: 2}
+    - {x: 6, y: 3}
+    - {x: 5, y: 3}
+    - {x: 4, y: 3}
+  - id: 6
+    colorId: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    headDirection: 3
+    cells:
+    - {x: 7, y: 0}
+    - {x: 6, y: 0}
+    - {x: 5, y: 0}
+  - id: 7
+    colorId: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    headDirection: 3
+    cells:
+    - {x: 7, y: 7}
+    - {x: 6, y: 7}
+    - {x: 5, y: 7}
+  - id: 8
+    colorId: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    headDirection: 0
+    cells:
+    - {x: 0, y: 4}
+    - {x: 0, y: 3}
+    - {x: 0, y: 2}
+  - id: 9
+    colorId: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    headDirection: 0
+    cells:
+    - {x: 4, y: 6}
+    - {x: 4, y: 5}
+    - {x: 4, y: 4}
+  - id: 10
+    colorId: 8
+    color: {r: 0.85490197, g: 0.007843138, b: 0.11372549, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 7, y: 1}
+    - {x: 7, y: 2}
+    - {x: 7, y: 3}
+  - id: 11
+    colorId: 1
+    color: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 4, y: 0}
+    - {x: 4, y: 1}
+    - {x: 4, y: 2}
+  - id: 12
+    colorId: 1
+    color: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 0}
+    - {x: 1, y: 0}
+    - {x: 2, y: 0}
+    - {x: 3, y: 0}
+  - id: 13
+    colorId: 1
+    color: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 7}
+    - {x: 1, y: 7}
+    - {x: 2, y: 7}
+  - id: 14
+    colorId: 1
+    color: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    headDirection: 1
+    cells:
+    - {x: 1, y: 2}
+    - {x: 1, y: 3}
+    - {x: 1, y: 4}
+  - id: 15
+    colorId: 1
+    color: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 5, y: 6}
+    - {x: 6, y: 6}
+    - {x: 7, y: 6}
+  - id: 16
+    colorId: 1
+    color: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    headDirection: 3
+    cells:
+    - {x: 7, y: 5}
+    - {x: 6, y: 5}
+    - {x: 5, y: 5}
+  - id: 17
+    colorId: 1
+    color: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    headDirection: 2
+    cells:
+    - {x: 0, y: 5}
+    - {x: 1, y: 5}
+    - {x: 2, y: 5}
+  - id: 18
+    colorId: 1
+    color: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    headDirection: 0
+    cells:
+    - {x: 3, y: 5}
+    - {x: 3, y: 4}
+    - {x: 3, y: 3}
+    - {x: 3, y: 2}
+  - id: 19
+    colorId: 1
+    color: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    headDirection: 3
+    cells:
+    - {x: 4, y: 7}
+    - {x: 3, y: 7}
+    - {x: 3, y: 6}
+  - id: 20
+    colorId: 1
+    color: {r: 0.2784314, g: 0.27450982, b: 0.32156864, a: 1}
+    headDirection: 3
+    cells:
+    - {x: 6, y: 1}
+    - {x: 5, y: 1}
+    - {x: 5, y: 2}

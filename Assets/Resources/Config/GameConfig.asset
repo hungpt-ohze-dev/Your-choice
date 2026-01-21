@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ae542dddb0a3f40a57c7c7d2872c94, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: 
+  MapMax: 2
+  LevelMax: 5
+  LevelNextToHome: 4
+  LevelCoinReward: 20
+  ListLevelHard: 
+  GamePlaySecondLeftWarning: 15
+  GamePlayIceCountDown: 3
+  GamePlayShowHand: 1
+  GamePlayCamSize: 30
+  GamePlayCamWidth: 7.5
+  GamePlayCreative: 4
+  GamePlayPixelFillDeep: 3
+  ListItemNonMatch: 
+  ReviveAddTime: 60
+  ReviveCost: 300
+  Boosters: []
+  BoosterDelay: 2
+  BoosterTimeAdd: 20
+  BoosterTutAdd: 2
+  HelperTimeShowSuggestion: 10
+  AdsAddTimeUnlockContainer: 20
+  ShipperSecondShowAds: 10
+  ShipperSecondLeftWarning: 10
+  ShipperReviveCost: 300
+  ShipperReviveTimeAdd: 30
+  ResourceMaxHeart: 5
+  ResourceSecondAddHeart: 60
+  HeartCoinCost: 10
+  HeartCoinAdd: 1
+  HeartAdsAdd: 3
+  HeartMax: 13
+  ShopOffer_FreeCoinHourCountDown: 3
+  PiggyBankMin: 360
+  PiggyBankMax: 720
+  GoldRushSecondCooldown: 7200
+  GoldRushCappingTime: 1800
+  DailyRewardMaxDay: 7
+  StarterPackCappingTimeShow: 180
+  SpecialPackSecondCooldown: 3600
+  SpecialPackCappingTimeShow: 3600
