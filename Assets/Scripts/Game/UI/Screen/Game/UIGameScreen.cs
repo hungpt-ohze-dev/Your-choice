@@ -6,8 +6,9 @@ using UnityEngine;
 public class UIGameScreen : BaseScreen
 {
     [Header("Component")]
-    [SerializeField] private TMP_Text levelTxt;
-    [SerializeField] private NumberTween iqTxt;
+    public MobileButton leftBtn;
+    public MobileButton rightBtn;
+    public MobileButton choiceBtn;
 
     [Header("Resource")]
     [SerializeField] private UICoinInfo coinInfo;
@@ -26,8 +27,6 @@ public class UIGameScreen : BaseScreen
         base.Show();
 
         //coinInfo.UpdateInfo();
-        levelTxt.text = $"Level {levelSave.levelId}";
-        //iqTxt.Current = 60f;
     }
 
     public void OnSetting()
@@ -40,14 +39,4 @@ public class UIGameScreen : BaseScreen
         MainGame.Instance.ResetLevel();
     }
 
-    public void UpdateIQ(float amount)
-    {
-        float value = iqTxt.Current + amount;
-        iqTxt.AnimateNumber((int)value, 0.8f);
-    }
-
-    public void UpdateLevel()
-    {
-        levelTxt.text = $"Level {levelSave.levelId}";
-    }
 }

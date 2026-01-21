@@ -45,33 +45,6 @@ public class MonoScene : MonoSingleton<MonoScene>
         onDone?.Invoke();
     }
 
-    #region Creative
-    public void LoadCreativeScene(int id, Action onDone = null)
-    {
-        // Start a coroutine to handle the loading process and setting active scene
-        StartCoroutine(LoadCreativeSceneIEnum(id, onDone));
-    }
-
-    private IEnumerator LoadCreativeSceneIEnum(int id, Action onDone)
-    {
-        string name = $"{NameSceneEnum.Creative.ToString()} {id}";
-
-        // Load the scene asynchronously
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(name, LoadSceneMode.Additive);
-
-        // Wait until the asynchronous scene is fully loaded
-        while (!asyncLoad.isDone)
-        {
-            yield return null;
-        }
-
-        SetActiveScene(name);
-
-        onDone?.Invoke();
-    }
-
-    #endregion
-
     public void LoadHomeScene(Action onDone = null)
     {
         // Start a coroutine to handle the loading process and setting active scene

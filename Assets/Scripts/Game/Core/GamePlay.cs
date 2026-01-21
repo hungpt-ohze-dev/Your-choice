@@ -11,6 +11,10 @@ public class GamePlay : MonoSingleton<GamePlay>
     [SerializeField] private PlatformEnum platformID;
     [SerializeField] private bool canTouch;
 
+    [Header("Player")]
+    [SerializeField] private PlayerController player;
+    [SerializeField] private RoomController room;
+
     // Get static
     public static bool LevelSetupDone = false;
     public static bool CanTouch
@@ -19,6 +23,8 @@ public class GamePlay : MonoSingleton<GamePlay>
         set => Instance.canTouch = value;
     }
     public static PlatformEnum TargetPlatform => Instance.platformID;
+    public static PlayerController Player => Instance.player;
+    public static RoomController Room => Instance.room;
 
     // Private variable
     private LevelSave levelSave;
@@ -92,15 +98,20 @@ public class GamePlay : MonoSingleton<GamePlay>
     {
         canTouch = false;
 
-        int maxLevel = DataManager.Config.LevelMax;
-        int levelId = levelSave.levelId % (maxLevel + 1);
-        levelId = Mathf.Clamp(levelId, 1, maxLevel);
-
+        var gameScreen = await UIManager.Instance.ShowScreen<UIGameScreen>();
         UIManager.Extra.HideTransition();
         canTouch = true;
 
         // Release all sound
         await UniTask.DelayFrame(1);
+
+        room.Init();
+        player.Init();
+
+        await UniTask.DelayFrame(1);
+        room.LoadRoom(levelSave.roomId);
+
+
         //AudioController.Instance.ReleaseSounds();
 
         // Music background

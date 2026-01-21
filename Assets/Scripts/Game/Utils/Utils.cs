@@ -163,6 +163,18 @@ public static class Utils
         }
     }
 
+    public static bool CheckLayerMaskCollier2D(LayerMask layerMask, Collider2D other)
+    {
+        if (((1 << other.gameObject.layer) & layerMask) != 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public static int FloatToInt(float value)
     {
         if ((value + 0.5f) >= Mathf.CeilToInt(value))

@@ -4,18 +4,18 @@ using UnityEngine;
 [Serializable]
 public class LevelSave : BaseDataSave
 {
-    public int levelId;
+    public int roomId;
 
     public override void Init()
     {
         base.Init();
 
-        levelId = 1;
+        roomId = 0;
     }
 
     public void FinishLevel()
     {
-        levelId += 1;
+        roomId += 1;
         Save();
     }
 }

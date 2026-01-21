@@ -34,13 +34,10 @@ public class MainGame : MonoSingleton<MainGame>
 
     public async void LoadGame()
     {
-        //await UIManager.Extra.TransitionScreen.TransitionIn();
+        await UIManager.Extra.TransitionScreen.TransitionIn();
 
-        //MonoScene.Instance.LoadGameScene(OnDoneLoadGame);
-
-        //var gameScreen = UIManager.Instance.ShowScreen<UIGameScreen>();
-
-        LoadCreative();
+        MonoScene.Instance.LoadGameScene(OnDoneLoadGame);
+        
     }
 
     private void OnDoneLoadGame()
@@ -64,7 +61,6 @@ public class MainGame : MonoSingleton<MainGame>
         MonoScene.Instance.RemoveLevelScene();
 
         await UniTask.WaitForSeconds(0.2f);
-        MonoScene.Instance.LoadCreativeScene(1);
     }
 
     public async void NextLevel()
@@ -111,14 +107,5 @@ public class MainGame : MonoSingleton<MainGame>
         float camSize = defaultWidth / 2f / currentAspect * targetAspect;
         mainCam.orthographicSize = camSize;
         subCam.orthographicSize = camSize;
-    }
-
-    public async void LoadCreative()
-    {
-        await UIManager.Extra.TransitionScreen.TransitionIn();
-
-        MonoScene.Instance.LoadCreativeScene(creativeId);
-
-        var gameScreen = UIManager.Instance.ShowScreen<UIGameScreen>();
     }
 }
