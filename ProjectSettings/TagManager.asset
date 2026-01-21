@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SlotController
+  - interface
+  - sound_master
   layers:
   - Default
   - TransparentFX
@@ -41,9 +44,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Popup
-    uniqueID: 1698565555
-    locked: 0
-  - name: Extra
-    uniqueID: 388604777
+  - name: minigame
+    uniqueID: 765134723
     locked: 0
