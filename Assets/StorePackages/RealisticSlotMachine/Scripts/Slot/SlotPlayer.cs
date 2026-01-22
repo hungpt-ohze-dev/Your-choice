@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Diagnostics;
 
 namespace Mkey
 {
@@ -10,7 +11,7 @@ namespace Mkey
         [Header("Default data", order = 1)]
         [Tooltip("Default coins at start")]
         [SerializeField]
-        private int defCoinsCount = 10020; 
+        private int defCoinsCount = 10020;
 
         [Tooltip("Default facebook coins")]
         [SerializeField]
@@ -46,11 +47,11 @@ namespace Mkey
         #endregion keys
 
         #region events
-        public Action <int> ChangeCoinsEvent;
+        public Action<int> ChangeCoinsEvent;
         public Action<int> LoadCoinsEvent;
-        public Action <float> ChangeLevelProgressEvent;
+        public Action<float> ChangeLevelProgressEvent;
         public Action<float> LoadLevelProgressEvent;
-        public Action <int,int, bool> ChangeLevelEvent;
+        public Action<int, int, bool> ChangeLevelEvent;
         public Action<int> LoadLevelEvent;
         public Action<int> ChangeWinCoinsEvent;
         #endregion events
@@ -147,17 +148,48 @@ namespace Mkey
         /// Set coins, save result and raise ChangeCoinsEvent
         /// </summary>
         /// <param name="count"></param>
+        //private void SetCoinsCount(int count, bool raiseEvent)
+        //{
+        //    count = Mathf.Max(0, count);
+        //    bool changed = (Coins != count);
+        //    Coins = count;
+        //    if (SaveData && changed)
+        //    {
+        //        string key = saveCoinsKey;
+        //        PlayerPrefs.SetInt(key, Coins);
+        //    }
+        //    if (changed && raiseEvent) ChangeCoinsEvent?.Invoke(Coins);
+        //}
+        //private void SetCoinsCount(int count, bool raiseEvent)
+        //{
+        //    count = Mathf.Max(0, count);
+
+        //    int old = DataManager.Save.Resource.Coin;
+        //    if (old == count) return;
+
+        //    // ✅ ghi vào Resource
+        //    DataManager.Save.Resource.resouces[ResourceType.Coin] = count;
+
+        //    // ✅ save ngay (hoặc để SaveAll ở OnQuit)
+        //    DataManager.Save.Save(DataManager.Save.Resource.Key, DataManager.Save.Resource);
+
+        //    if (raiseEvent)
+        //        ChangeCoinsEvent?.Invoke(count);
+        //}
         private void SetCoinsCount(int count, bool raiseEvent)
         {
             count = Mathf.Max(0, count);
-            bool changed = (Coins != count);
-            Coins = count;
-            if (SaveData && changed)
-            {
-                string key = saveCoinsKey;
-                PlayerPrefs.SetInt(key, Coins);
-            }
-            if (changed && raiseEvent) ChangeCoinsEvent?.Invoke(Coins);
+
+            int old = DataManager.Save.Resource.Coin;
+            if (old == count) return;
+
+            Coins = count; // 🔥 BẮT BUỘC
+
+            DataManager.Save.Resource.resouces[ResourceType.Coin] = count;
+            DataManager.Save.Save(DataManager.Save.Resource.Key, DataManager.Save.Resource);
+
+            if (raiseEvent)
+                ChangeCoinsEvent?.Invoke(count);
         }
 
         /// <summary>
@@ -175,20 +207,37 @@ namespace Mkey
         /// <summary>
         /// Load serialized coins or set defaults
         /// </summary>
+        //private void LoadCoins()
+        //{
+        //    if (SaveData)
+        //    {
+        //        string key = saveCoinsKey;
+        //        SetCoinsCount(PlayerPrefs.GetInt(key, defCoinsCount), false);
+        //    }
+        //    else
+        //    {
+        //        SetCoinsCount(defCoinsCount, false);
+        //    }
+
+        //    LoadCoinsEvent?.Invoke(Coins);
+        //}
         private void LoadCoins()
         {
-            if (SaveData)
+            if (DataManager.Save == null || DataManager.Save.Resource == null)
             {
-                string key = saveCoinsKey;
-                SetCoinsCount(PlayerPrefs.GetInt(key, defCoinsCount), false);
-            }
-            else
-            {
-                SetCoinsCount(defCoinsCount, false);
+                Coins = defCoinsCount; // fallback
+                ChangeCoinsEvent?.Invoke(Coins);
+                return;
             }
 
+            int coinFromResource = DataManager.Save.Resource.Coin;
+            Coins = coinFromResource;
+            ChangeCoinsEvent?.Invoke(Coins);
             LoadCoinsEvent?.Invoke(Coins);
+            UnityEngine.Debug.Log("Load coins from Resource Save: " + coinFromResource);
         }
+
+
         #endregion coins
 
         #region wincoins
@@ -265,7 +314,7 @@ namespace Mkey
             if (SaveData)
             {
                 string key = saveLevelKey;
-                SetLevel (PlayerPrefs.GetInt(key, 0), false);
+                SetLevel(PlayerPrefs.GetInt(key, 0), false);
             }
             else
             {
@@ -326,7 +375,7 @@ namespace Mkey
             if (SaveData)
             {
                 string key = saveLevelProgressKey;
-                SetLevelProgress(PlayerPrefs.GetFloat(key, 0),false);
+                SetLevelProgress(PlayerPrefs.GetFloat(key, 0), false);
             }
             else
             {
@@ -340,14 +389,19 @@ namespace Mkey
         {
             SetCoinsCount(defCoinsCount);
             PlayerPrefs.SetInt(saveFbCoinsKey, 0); // reset facebook gift
-           
+            UnityEngine.Debug.Log("SSetDefaultData" + defCoinsCount);
             SetLevel(0);
             SetLevelProgress(0);
         }
 
-        public bool HasMoneyForBet (int totalBet)
+        //public bool HasMoneyForBet (int totalBet)
+        //{
+        //     return totalBet <= Coins; 
+        //}
+        public bool HasMoneyForBet(int totalBet)
         {
-             return totalBet <= Coins; 
+            return DataManager.Save.Resource.Coin >= totalBet;
         }
+
     }
 }
