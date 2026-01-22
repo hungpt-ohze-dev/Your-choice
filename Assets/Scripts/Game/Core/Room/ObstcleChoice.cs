@@ -46,6 +46,7 @@ public class ObstcleChoice : MonoBehaviour
         timeSpin++;
         isPlayed = true;
         popup.SetActive(true);
+        amount = DataManager.Save.Resource.Coin;
 
         bool win = UnityEngine.Random.Range(0, 100) < percentWin;
         StartCoroutine(SpineSlotIEnum(win));
