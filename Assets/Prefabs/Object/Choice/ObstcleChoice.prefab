@@ -359,6 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3650d47bd41904c8a0decdab73b153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   animator: {fileID: 8099317971531842561}
   popup: {fileID: 7403254598805478461}
   sorting: {fileID: 3541355235227406489}
@@ -493,7 +494,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -246391304, guid: dcfd1fe133f2d90448af8da6c8a923b4, type: 3}
+  m_Sprite: {fileID: 1055577947, guid: c74d23da720a27d45a50ad961b2ebe23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

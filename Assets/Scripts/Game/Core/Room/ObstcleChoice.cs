@@ -9,7 +9,7 @@ using UnityEngine.Rendering;
 public class ObstcleChoice : MonoBehaviour
 {
     [Header("Info")]
-    [SerializeField] private int id;
+    [SerializeField] private int timeSpin = 0;
 
     [Header("Component")]
     [SerializeField] private Animator animator;
@@ -23,7 +23,7 @@ public class ObstcleChoice : MonoBehaviour
     private bool isPlayed = false;
 
     // Get set
-    public int Id => id;
+    public int TimeSpin => timeSpin;
 
     private void Start()
     {
@@ -43,6 +43,7 @@ public class ObstcleChoice : MonoBehaviour
 
     public void SpineSlotMachine()
     {
+        timeSpin++;
         isPlayed = true;
         popup.SetActive(true);
 
@@ -65,7 +66,8 @@ public class ObstcleChoice : MonoBehaviour
         }
         else
         {
-            animator.CrossFade("SlotLose", 0f);
+            int randLose = UnityEngine.Random.Range(0, 3);
+            animator.CrossFade($"SlotLose_{randLose}", 0f);
             Lose();
         }
 

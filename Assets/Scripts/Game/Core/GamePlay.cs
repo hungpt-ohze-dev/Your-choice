@@ -197,9 +197,10 @@ public class GamePlay : MonoSingleton<GamePlay>
     {
         this.slotMachine = slot;
         askPopup.Show(true);
-        askPopup.ShowButton(slot.Id);
+        askPopup.ShowButton(slot.TimeSpin);
 
         player.CanMove = false;
+        player.StopMove();
         player.PushLayer();
         slotMachine.PushLayer();
 

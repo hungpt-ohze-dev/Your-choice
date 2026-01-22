@@ -10,7 +10,7 @@ public class SlotAskPopup : MonoBehaviour
     {
         playBtn.SetActive(true);
 
-        bool showSkip = timeIndex == 0 ? false : true;
+        bool showSkip = timeIndex < 0 ? false : true;
         skipBtn.SetActive(showSkip);
     }
 
