@@ -22,11 +22,11 @@ public class ObstcleChoice : MonoBehaviour
 
     public void ShowChoice()
     {
-        if (isPlayed)
-        {
-            UIManager.Extra.ShowToast("You have played this slot machine");
-            return;
-        }
+        //if (isPlayed)
+        //{
+        //    UIManager.Extra.ShowToast("You have played this slot machine");
+        //    return;
+        //}
 
         GamePlay.Player.CanMove = false;
 
