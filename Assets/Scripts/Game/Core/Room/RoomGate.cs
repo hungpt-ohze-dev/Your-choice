@@ -10,7 +10,7 @@ public class RoomGate : MonoBehaviour
     {
         if(Utils.CheckLayerMaskCollier2D(mask, other))
         {
-            GamePlay.Room.NextRoom();
+            //GamePlay.Room.NextRoom();
         }
     }
 }

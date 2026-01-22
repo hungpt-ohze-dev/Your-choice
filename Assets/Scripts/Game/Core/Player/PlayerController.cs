@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Component")]
+    [SerializeField] private Animator animator;
+
     [Header("Value")]
     public float speed = 5f;
 
@@ -67,17 +70,23 @@ public class PlayerController : MonoBehaviour
     {
         moveDirection = -1;
         Flip(-1);
+
+        animator.SetBool("IsMove", true);
     }
 
     public void MoveRight()
     {
         moveDirection = 1;
         Flip(1);
+
+        animator.SetBool("IsMove", true);
     }
 
     public void StopMove()
     {
         moveDirection = 0;
+
+        animator.SetBool("IsMove", false);
     }
 
     void Flip(int direction)
