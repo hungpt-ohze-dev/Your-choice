@@ -543,7 +543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: VAN QUYEN
+  m_text: QUYEN NV
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e5f7c54693bf62640bd08d6a88fa88a2, type: 2}
   m_sharedMaterial: {fileID: -1422834232340609539, guid: e5f7c54693bf62640bd08d6a88fa88a2,
