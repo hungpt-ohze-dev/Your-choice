@@ -97,7 +97,7 @@ public class MonoScene : MonoSingleton<MonoScene>
 
     public void SetActiveScene(NameSceneEnum nameScene)
     {
-        Scene scene = SceneManager.GetSceneByName(nameScene.ToString()); ;
+        Scene scene = SceneManager.GetSceneByName(nameScene.ToString());
 
         if (scene.IsValid())
         {
@@ -112,7 +112,7 @@ public class MonoScene : MonoSingleton<MonoScene>
 
     public void SetActiveScene(string sceneName)
     {
-        Scene scene = SceneManager.GetSceneByName(sceneName); ;
+        Scene scene = SceneManager.GetSceneByName(sceneName);
 
         if (scene.IsValid())
         {

@@ -727,7 +727,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.01, z: 0}
-  m_LocalScale: {x: 1.0133073, y: 1.0133073, z: 1.0133073}
+  m_LocalScale: {x: 1.0248914, y: 1.0248914, z: 1.0248914}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 587118577203018656}
@@ -2361,7 +2361,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2607722334596718647}
-  - {fileID: 7327820045694998781}
   - {fileID: 2685920898534000723}
   - {fileID: 568717533675479352}
   - {fileID: 6332641525767330110}
@@ -2465,7 +2464,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 7761483996658421225}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 50
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -6610,7 +6609,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3326826, y: 1.3326826, z: 1.3326826}
+  m_LocalScale: {x: 1.6222848, y: 1.6222848, z: 1.6222848}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 568717533675479352}
@@ -9751,11 +9750,6 @@ PrefabInstance:
       propertyPath: m_BlockingMask.m_Bits
       value: 247
       objectReference: {fileID: 0}
-    - target: {fileID: 7512152866131913508, guid: 1c3a4036220b1f74cbf8127b564e92f2,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 7761483996658421225}
     - target: {fileID: 7512152866131913509, guid: 1c3a4036220b1f74cbf8127b564e92f2,
         type: 3}
       propertyPath: m_Pivot.x
