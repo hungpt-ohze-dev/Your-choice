@@ -1,4 +1,6 @@
-﻿using Sirenix.OdinInspector;
+﻿using com.homemade.modules.audio;
+using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +24,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject skin_1;
     [SerializeField] private GameObject skin_2;
     [SerializeField] private GameObject skin_3;
+
+    [Header("VFX")]
+    [SerializeField] private GameObject vfx_1;
+    [SerializeField] private GameObject vfx_2;
+    [SerializeField] private GameObject vfx_3;
 
     private Rigidbody2D rb;
     // Giá trị điều khiển (-1 trái, 0 đứng, 1 phải)
@@ -151,7 +158,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    [Button]
     public void ChangeSkin(int id)
     {
         if(currentSkin != null)
@@ -183,10 +189,34 @@ public class PlayerController : MonoBehaviour
     {
         loseTime++;
         ChangeSkin(loseTime);
+        ShowVfxLost();
 
         if (loseTime >= 3)
         {
             GamePlay.Instance.LoseGame();
         }
+    }
+
+    public async void ShowVfxLost()
+    {
+        AudioController.Instance.PlaySound(SoundClips.Confetti);
+        GameObject currentVfx = null;
+
+        switch (loseTime)
+        {
+            case 1:
+                currentVfx = vfx_1;
+                break;
+            case 2:
+                currentVfx = vfx_2;
+                break;
+            case 3:
+                currentVfx = vfx_3;
+                break;
+        }
+
+        currentVfx.SetActive(true);
+        await UniTask.WaitForSeconds(2f);
+        currentVfx.SetActive(false);
     }
 }

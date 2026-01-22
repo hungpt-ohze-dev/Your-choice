@@ -1440,7 +1440,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -56.7386, y: -51.335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9013717270467100191
 CanvasRenderer:
@@ -1470,7 +1470,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: AI
+  m_text: Life Learning
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e5f7c54693bf62640bd08d6a88fa88a2, type: 2}
   m_sharedMaterial: {fileID: -1422834232340609539, guid: e5f7c54693bf62640bd08d6a88fa88a2,
@@ -1498,10 +1498,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
+  m_fontSize: 56.5
   m_fontSizeBase: 80
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
