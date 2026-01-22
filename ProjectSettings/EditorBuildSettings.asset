@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlay.unity
     guid: b562dcd0674cbbe4f84d344754c5a4f7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/1_Slot_3X3_FruitHold.unity
     guid: 4f217c0aaaf76304e938c9b589b05fb0
   m_configObjects:

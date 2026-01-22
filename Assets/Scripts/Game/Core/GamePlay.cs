@@ -112,14 +112,12 @@ public class GamePlay : MonoSingleton<GamePlay>
 
         await UniTask.DelayFrame(1);
 
-
-        //AudioController.Instance.ReleaseSounds();
+        AudioController.Instance.ReleaseSounds();
 
         // Music background
-        //await UniTask.DelayFrame(1);
-        //string musicBG = $"game_bgm_{Random.Range(1, 9)}";
-        //gameMusic = AudioController.Instance.PlaySmartMusic(musicBG);
-        //gameMusic.source.mute = !settingSave.music;
+        await UniTask.DelayFrame(1);
+        gameMusic = AudioController.Instance.PlaySmartMusic(MusicClips.Background);
+        gameMusic.source.mute = !settingSave.music;
     }
 
     #region Event
@@ -128,8 +126,10 @@ public class GamePlay : MonoSingleton<GamePlay>
     {
         canTouch = false;
         levelSave.FinishLevel();
+        player.CanMove = false;
 
         Debug.Log("Win");
+        gameMusic.Stop();
 
         this.PostEvent(EventID.WinGame);
 
@@ -140,7 +140,9 @@ public class GamePlay : MonoSingleton<GamePlay>
     public async void LoseGame()
     {
         canTouch = false;
+        player.CanMove = false;
         Debug.Log("Lose");
+        gameMusic.Stop();
 
         this.PostEvent(EventID.LoseGame);
 

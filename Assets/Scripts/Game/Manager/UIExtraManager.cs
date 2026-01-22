@@ -67,7 +67,7 @@ public class UIExtraManager : MonoBehaviour
 
     public void ShowToast(string message)
     {
-        //toast.ShowToast(message);
+        toast.ShowToast(message);
     }
 
     public void ShowTransition()

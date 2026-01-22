@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
 
     private ObstcleChoice obstcleChoice;
 
+    public bool CanMove;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public void Init()
     {
         gameScreen = UIManager.Instance.GetActiveScreen<UIGameScreen>();
+        CanMove = true;
 
         // Input
         gameScreen.leftBtn.OnButtonDown = MoveLeft;
@@ -68,6 +71,8 @@ public class PlayerController : MonoBehaviour
     // Được gọi từ Button
     public void MoveLeft()
     {
+        if (!CanMove) return;
+
         moveDirection = -1;
         Flip(-1);
 
@@ -76,6 +81,8 @@ public class PlayerController : MonoBehaviour
 
     public void MoveRight()
     {
+        if (!CanMove) return;
+
         moveDirection = 1;
         Flip(1);
 
@@ -99,7 +106,6 @@ public class PlayerController : MonoBehaviour
         if (!canChoice) return;
 
         obstcleChoice.ShowChoice();
-        Debug.Log("Choice");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
