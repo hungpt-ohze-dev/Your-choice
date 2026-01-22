@@ -802,6 +802,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
+      propertyPath: id
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
+        type: 3}
       propertyPath: percentWin
       value: 35
       objectReference: {fileID: 0}
@@ -878,6 +883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
+        type: 3}
+      propertyPath: id
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
@@ -960,6 +970,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
+      propertyPath: id
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
+        type: 3}
       propertyPath: percentWin
       value: 10
       objectReference: {fileID: 0}
@@ -1036,6 +1051,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
+        type: 3}
+      propertyPath: id
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
@@ -1118,6 +1138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
+      propertyPath: id
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
+        type: 3}
       propertyPath: percentWin
       value: 15
       objectReference: {fileID: 0}
@@ -1197,6 +1222,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
+      propertyPath: id
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
+        type: 3}
       propertyPath: percentWin
       value: 5
       objectReference: {fileID: 0}
@@ -1272,6 +1302,11 @@ PrefabInstance:
     - target: {fileID: 6034355369441027580, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
+        type: 3}
+      propertyPath: id
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
@@ -1355,6 +1390,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
+      propertyPath: id
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
+        type: 3}
       propertyPath: percentWin
       value: 30
       objectReference: {fileID: 0}
@@ -1432,6 +1472,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
+        type: 3}
+      propertyPath: id
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1505,6 +1550,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
+        type: 3}
+      propertyPath: id
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}

@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerController : MonoBehaviour
 {
     [Header("Component")]
     [SerializeField] private Animator animator;
+    [SerializeField] private SortingGroup sorting;
 
     [Header("Value")]
     public float speed = 5f;
@@ -101,9 +103,20 @@ public class PlayerController : MonoBehaviour
         transform.localScale = new Vector3(direction, 1, 1);
     }
 
+    public void PushLayer()
+    {
+        sorting.sortingLayerID = SortingLayer.NameToID("Extra");
+    }
+
+    public void ResetLayer()
+    {
+        sorting.sortingLayerID = SortingLayer.NameToID("Default");
+    }
+
     public void ChoiceAction()
     {
         if (!canChoice) return;
+        if (!CanMove) return;
 
         obstcleChoice.ShowChoice();
     }
@@ -115,6 +128,7 @@ public class PlayerController : MonoBehaviour
             canChoice = true;
 
             obstcleChoice = other.GetComponent<ObstcleChoice>();
+            obstcleChoice.ShowChoice();
         }
     }
 

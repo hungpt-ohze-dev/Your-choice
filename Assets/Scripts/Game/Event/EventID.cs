@@ -9,8 +9,9 @@ public enum EventID
     ReviveGame,
 
     // Game play
-    Done_KnitWool,
-    Done_Arrow,
+    Ask_To_Play,
+    Skip_Slot,
+    Play_Slot,
 
     // Info
     Update_Resource,

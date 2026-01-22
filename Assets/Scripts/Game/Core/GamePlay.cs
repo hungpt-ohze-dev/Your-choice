@@ -17,6 +17,9 @@ public class GamePlay : MonoSingleton<GamePlay>
     [Header("Player")]
     [SerializeField] private PlayerController player;
 
+    [Header("UI")]
+    [SerializeField] private SlotAskPopup askPopup;
+
     // Get static
     public static bool LevelSetupDone = false;
     public static bool CanTouch
@@ -36,6 +39,7 @@ public class GamePlay : MonoSingleton<GamePlay>
     private AudioCase gameMusic;
 
     private UIGameScreen gameScreen;
+    private ObstcleChoice slotMachine;
 
     protected override void OnInit()
     {
@@ -188,5 +192,39 @@ public class GamePlay : MonoSingleton<GamePlay>
         SceneManager.UnloadSceneAsync("1_Slot_3X3_FruitHold");
         gameScreen.ShowMain();
     }    
+
+    public void AskToPlaySlot(ObstcleChoice slot)
+    {
+        this.slotMachine = slot;
+        askPopup.Show(true);
+        askPopup.ShowButton(slot.Id);
+
+        player.CanMove = false;
+        player.PushLayer();
+        slotMachine.PushLayer();
+
+        this.PostEvent(EventID.Ask_To_Play);
+    }
+
+    public void SkipSlot()
+    {
+        askPopup.Show(false);
+        player.ResetLayer();
+        player.CanMove = true;
+        slotMachine.ResetLayer();
+
+        this.PostEvent(EventID.Skip_Slot);
+    }
+
+    public void PlaySlot()
+    {
+        askPopup.Show(false);
+        player.ResetLayer();
+        player.CanMove = true;
+        slotMachine.ResetLayer();
+        slotMachine.SpineSlotMachine();
+
+        this.PostEvent(EventID.Play_Slot);
+    }
 
 }

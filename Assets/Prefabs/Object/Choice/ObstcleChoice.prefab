@@ -361,6 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8099317971531842561}
   popup: {fileID: 7403254598805478461}
+  sorting: {fileID: 3541355235227406489}
   percentWin: 70
   amount: 100
 --- !u!1 &7403254598805478461

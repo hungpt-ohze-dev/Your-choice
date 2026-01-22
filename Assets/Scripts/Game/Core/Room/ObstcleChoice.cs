@@ -1,19 +1,29 @@
 using com.homemade.modules.audio;
+using com.homemade.pattern.observer;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ObstcleChoice : MonoBehaviour
 {
+    [Header("Info")]
+    [SerializeField] private int id;
+
     [Header("Component")]
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject popup;
+    [SerializeField] private SortingGroup sorting;
 
     [Header("Percent Win")]
     [SerializeField] private int percentWin = 70;
     [SerializeField] private int amount = 100;
 
     private bool isPlayed = false;
+
+    // Get set
+    public int Id => id;
 
     private void Start()
     {
@@ -22,18 +32,7 @@ public class ObstcleChoice : MonoBehaviour
 
     public void ShowChoice()
     {
-        //if (isPlayed)
-        //{
-        //    UIManager.Extra.ShowToast("You have played this slot machine");
-        //    return;
-        //}
-
-        GamePlay.Player.CanMove = false;
-
-        popup.SetActive(true);
-        SpineSlotMachine();
-
-        isPlayed = true;
+        GamePlay.Instance.AskToPlaySlot(this);
     }
 
     public void Hide()
@@ -42,9 +41,12 @@ public class ObstcleChoice : MonoBehaviour
         GamePlay.Player.CanMove = true;
     }
 
-    private void SpineSlotMachine()
+    public void SpineSlotMachine()
     {
-        bool win = Random.Range(0, 100) < percentWin;
+        isPlayed = true;
+        popup.SetActive(true);
+
+        bool win = UnityEngine.Random.Range(0, 100) < percentWin;
         StartCoroutine(SpineSlotIEnum(win));
     }
 
@@ -90,5 +92,15 @@ public class ObstcleChoice : MonoBehaviour
         {
             GamePlay.Instance.LoseGame();
         }
+    }
+
+    public void PushLayer()
+    {
+        sorting.sortingLayerID = SortingLayer.NameToID("Extra");
+    }
+
+    public void ResetLayer()
+    {
+        sorting.sortingLayerID = SortingLayer.NameToID("Default");
     }
 }

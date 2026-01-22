@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3999318843608890502}
+  sorting: {fileID: 134497857312923857}
   speed: 8
   colMask:
     serializedVersion: 2
