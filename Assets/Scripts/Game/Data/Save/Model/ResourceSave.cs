@@ -37,7 +37,7 @@ public class ResourceSave : BaseDataSave
         resouces = new()
         {
             { ResourceType.Heart, 5 },
-            { ResourceType.Coin, 0 },
+            { ResourceType.Coin, 500 },
             { ResourceType.Star, 0 },
         };
 

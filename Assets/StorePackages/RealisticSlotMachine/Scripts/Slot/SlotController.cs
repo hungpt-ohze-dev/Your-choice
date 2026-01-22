@@ -7,7 +7,7 @@ using UnityEngine.Events;
 
 namespace Mkey
 {
-    public enum WinLineFlashing {All, Sequenced, None}
+    public enum WinLineFlashing { All, Sequenced, None }
     public enum JackPotType { None, Mini, Maxi, Mega }
     public enum JackPotIncType { Const, Percent } // add const value or percent of start value
 
@@ -23,7 +23,7 @@ namespace Mkey
         #endregion main reference
 
         #region icons
-        [SerializeField, ArrayElementTitle("iconSprite"), NonReorderable, ]
+        [SerializeField, ArrayElementTitle("iconSprite"), NonReorderable,]
         public SlotIcon[] slotIcons;
 
         [Space(8)]
@@ -111,7 +111,7 @@ namespace Mkey
 
         #region jack pots
         [Space(8)]
-        public int jp_symbol_id=-1;
+        public int jp_symbol_id = -1;
         public bool useMiniJacPot = false;
         [Tooltip("Count identical symbols on screen")]
         public int miniJackPotCount = 7;
@@ -152,7 +152,7 @@ namespace Mkey
 
         private SlotSoundController MSound { get { return SlotSoundController.Instance; } }
         private SlotPlayer MPlayer { get { return SlotPlayer.Instance; } }
-        private SlotGuiController MGUI {get { return SlotGuiController.Instance; } }
+        private SlotGuiController MGUI { get { return SlotGuiController.Instance; } }
         private List<List<Triple>> tripleCombos;
         private JackPotType jackPotType = JackPotType.None;
         private int jackPotWinCoins = 0;
@@ -170,6 +170,11 @@ namespace Mkey
         public static SlotController CurrentSlot { get; private set; }
 
         public bool useWildInFirstPosition = false;
+        [SerializeField]
+        private bool forceFirstMegaJackpot = true;
+
+        private bool firstMegaJackpotDone = false;
+
 
         #region regular
         private void OnValidate()
@@ -189,20 +194,20 @@ namespace Mkey
             jackPotIncValue = Mathf.Max(0, jackPotIncValue);
 
             miniJackPotCount = Mathf.Max(1, miniJackPotCount);
-            maxiJackPotCount = Mathf.Max( (useMiniJacPot) ? miniJackPotCount + 1 : 1, maxiJackPotCount);
+            maxiJackPotCount = Mathf.Max((useMiniJacPot) ? miniJackPotCount + 1 : 1, maxiJackPotCount);
             megaJackPotCount = Mathf.Max((useMaxiJacPot) ? maxiJackPotCount + 1 : 1, megaJackPotCount);
             if (scatterPayTable != null)
             {
                 foreach (var item in scatterPayTable)
                 {
-                    if (item!=null)
+                    if (item != null)
                     {
                         item.payMult = Mathf.Max(1, item.payMult);
                     }
                 }
             }
         }
-      
+
         void Start()
         {
             wfs1_0 = new WaitForSeconds(1.0f);
@@ -234,7 +239,7 @@ namespace Mkey
 
         private void OnDestroy()
         {
-           
+
         }
         #endregion regular
 
@@ -245,7 +250,7 @@ namespace Mkey
         {
             RunSlots();
         }
-   
+
         private void RunSlots()
         {
             if (slotsRunned) return;
@@ -277,14 +282,14 @@ namespace Mkey
 
             StartCoroutine(RunSlotsAsync());
         }
-       
+
         private IEnumerator RunSlotsAsync()
         {
             jackPotWinCoins = 0;
             jackPotType = JackPotType.None;
 
             slotsRunned = true;
-            if(controls.Auto) controls.IncAutoSpinsCounter();
+            if (controls.Auto) controls.IncAutoSpinsCounter();
             Debug.Log("Spins count from game start: " + (++spinCount));
 
             MPlayer.SetWinCoinsCount(0); // take win
@@ -299,6 +304,7 @@ namespace Mkey
 
             //2 --------start rotating ----------------------------------------
             bool fullRotated = false;
+
             RotateSlots(() => { MSound.StopLoopClip(); fullRotated = true; });
             while (!fullRotated) yield return wfs0_2;  // wait 
 
@@ -310,14 +316,29 @@ namespace Mkey
 
             // 3a ----- increase jackpots ----
             IncreaseJackPots();
+            bool hasAnyWin = winController.HasAnyWinn(
+    ref hasLineWin,
+    ref hasScatterWin,
+    ref jackPotType
+);
+            // ===== FORCE FIRST MEGA JACKPOT =====
+            if (forceFirstMegaJackpot && !firstMegaJackpotDone)
+            {
+                hasAnyWin = true;
+                jackPotType = JackPotType.Mega;
 
-            if (winController.HasAnyWinn(ref hasLineWin, ref hasScatterWin, ref  jackPotType))
+                hasLineWin = false;
+                hasScatterWin = false;
+
+                firstMegaJackpotDone = true;
+            }
+            if (hasAnyWin)
             {
                 //3b ---- show particles, line flasing  -----------
                 winController.WinEffectsShow(winLineFlashing == WinLineFlashing.All, winSymbolParticles);
 
                 //3b --------- check Jack pot -------------
-               
+
                 while (!MGUI.HasNoPopUp) yield return wfs0_1;
 
                 jackPotWinCoins = controls.GetJackPotCoins(jackPotType);
@@ -331,7 +352,7 @@ namespace Mkey
                     {
                         controls.JPWinShow(jackPotWinCoins, jackPotType);
                         yield return new WaitForSeconds(5.0f); // delay
-                        controls.JPWinCancel(); 
+                        controls.JPWinCancel();
                     }
                     else
                     {
@@ -340,7 +361,7 @@ namespace Mkey
                     }
                     controls.SetJackPotCount(0, jackPotType); // reset jack pot amount
                 }
-                
+
                 //3c0 -----------------calc coins -------------------
                 int winCoins = winController.GetWinCoins();
                 int payMultiplier = winController.GetPayMultiplier();
@@ -356,7 +377,7 @@ namespace Mkey
                     else
                     {
                         while (!MGUI.HasNoPopUp) yield return wfs0_1;  // wait for prev popup closing
-                        MGUI.ShowMessage(BigWinPrefab, winCoins.ToString(),"", 3f, null);
+                        MGUI.ShowMessage(BigWinPrefab, winCoins.ToString(), "", 3f, null);
                     }
                 }
 
@@ -375,7 +396,7 @@ namespace Mkey
 
                 // 3d1 -------- add levelprogress --------------
                 while (!MGUI.HasNoPopUp) yield return wfs0_1; // wait for the prev popup to close
-                MPlayer.AddLevelProgress( (useLineBetProgressMultiplier)? winSpinLevelProgress * winLinesCount * controls.LineBet : winSpinLevelProgress * winLinesCount); // for each win line
+                MPlayer.AddLevelProgress((useLineBetProgressMultiplier) ? winSpinLevelProgress * winLinesCount * controls.LineBet : winSpinLevelProgress * winLinesCount); // for each win line
 
                 // 3d2 ------------ start line events ----------
                 winController.StartLineEvents();
@@ -388,15 +409,15 @@ namespace Mkey
                 {
                     SetInputActivity(true);
                 }
-				MSound.PlayCurrentMusic();
-				
+                MSound.PlayCurrentMusic();
+
                 //3f ----------- show line effects, events can be interrupted by player----------------
                 bool showEnd = false;
                 winController.WinSymbolShow(winLineFlashing == WinLineFlashing.Sequenced,
                        (windata) => //linewin
                        {
                            //event can be interrupted by player
-                           if (windata!=null)  Debug.Log("lineWin : " +  windata.ToString());
+                           if (windata != null) Debug.Log("lineWin : " + windata.ToString());
                        },
                        () => //scatter win
                        {
@@ -424,10 +445,10 @@ namespace Mkey
                 //3e ---- ENABLE player interaction -----------
                 slotsRunned = false;
                 SetInputActivity(true);
-				MSound.PlayCurrentMusic();
+                MSound.PlayCurrentMusic();
             }
 
-         
+
             while (!MGUI.HasNoPopUp) yield return wfs0_1;  // wait for all popups closing
 
             if (controls.Auto || playFreeSpins)
@@ -449,7 +470,21 @@ namespace Mkey
         private void RotateSlots(Action rotCallBack)
         {
             ParallelTween pT = new ParallelTween();
-            int [] rands = rng.GetRandSymbols(); //next symbols for reel (bottom raycaster)
+            int[] rands = rng.GetRandSymbols(); //next symbols for reel (bottom raycaster)
+                                                // ===== FORCE JACKPOT SYMBOL ON FIRST SPIN =====
+            if (forceFirstMegaJackpot && !firstMegaJackpotDone)
+            {
+                int reelsToForce = Mathf.CeilToInt(
+                    (float)megaJackPotCount / slotGroupsBeh[0].RayCasters.Length
+                );
+
+                for (int i = 0; i < reelsToForce; i++)
+                {
+                    rands[i] = jp_symbol_id;
+                }
+            }
+
+            // =============================================
 
             //hold feature
             HoldFeature hold = controls.Hold;
@@ -465,17 +500,17 @@ namespace Mkey
 
             #region prediction visible symbols on reels
             if (debugPredictSymbols)
-            for (int i = 0; i < rands.Length; i++)
-            {
-                    Debug.Log("------- Reel: " + i +" ------- (down up)");
+                for (int i = 0; i < rands.Length; i++)
+                {
+                    Debug.Log("------- Reel: " + i + " ------- (down up)");
                     for (int r = 0; r < slotGroupsBeh[i].RayCasters.Length; r++)
                     {
                         int sO = (int)Mathf.Repeat(rands[i] + r, slotGroupsBeh[i].symbOrder.Count);
-                        int sID =  slotGroupsBeh[i].symbOrder[sO]; 
-                        string sName = slotIcons[sID].iconSprite.name; 
+                        int sID = slotGroupsBeh[i].symbOrder[sO];
+                        string sName = slotIcons[sID].iconSprite.name;
                         Debug.Log("NextSymb ID: " + sID + " ;name : " + sName);
                     }
-            }
+                }
             #endregion prediction
 
             for (int i = 0; i < slotGroupsBeh.Length; i++)
@@ -518,8 +553,8 @@ namespace Mkey
             }
             else
             {
-                menuController.SetControlActivity(activity); 
-                controls.SetControlActivity(activity, controls.Auto); 
+                menuController.SetControlActivity(activity);
+                controls.SetControlActivity(activity, controls.Auto);
             }
         }
 
@@ -573,7 +608,7 @@ namespace Mkey
             PayLine pL;
             List<PayLine> freeSpinsPL = new List<PayLine>();  // paylines with free spins
 
-            for (int i = 0; i < payTableFull.Count; i++) 
+            for (int i = 0; i < payTableFull.Count; i++)
             {
                 pL = payTableFull[i];
                 table[i + 1, 0] = "Payline #" + (i + 1).ToString();
@@ -604,7 +639,7 @@ namespace Mkey
 
             for (int i = 0; i < row.Count; i++)
             {
-                Debug.Log("sr"+i);
+                Debug.Log("sr" + i);
                 if (i + beginColumn < table.GetLongLength(1)) table[rowNumber, i + beginColumn] = row[i].ToString();
             }
         }
@@ -657,7 +692,8 @@ namespace Mkey
         #region calculate
         public void CreatTripleCombos()
         {
-            Measure("triples time", () => {
+            Measure("triples time", () =>
+            {
                 List<List<int>> triplesComboNumbers;  //0 0 0 0 0; 0 0 0 0 1 .... 24 24 24 24 24
                 triplesComboNumbers = new List<List<int>>();
                 ComboCounterT cct = new ComboCounterT(slotGroupsBeh);
@@ -899,7 +935,7 @@ namespace Mkey
         {
             for (int i = 0; i < randSymb.Length; i++)
             {
-                rand = randomMT.RandomRange(0, reelsData[i].Length-1);
+                rand = randomMT.RandomRange(0, reelsData[i].Length - 1);
                 randSymb[i] = rand;
             }
         }
@@ -1293,7 +1329,7 @@ namespace Mkey
 
         public void RebuildLine()
         {
-          // if (line.Length == maxLength) return;
+            // if (line.Length == maxLength) return;
             int[] lineT = new int[maxLength];
             for (int i = 0; i < maxLength; i++)
             {
@@ -1335,7 +1371,7 @@ namespace Mkey
 
     static class ClassExt
     {
-        public enum FieldAllign { Left, Right, Center}
+        public enum FieldAllign { Left, Right, Center }
 
         /// <summary>
         /// Return formatted string; (F2, N5, e, r, p, X, D12, C)
@@ -1346,7 +1382,7 @@ namespace Mkey
         /// <returns></returns>
         public static string ToString(this float fNumber, string format, int field)
         {
-            string form = "{0," + field.ToString() +":"+ format + "}";
+            string form = "{0," + field.ToString() + ":" + format + "}";
             string res = String.Format(form, fNumber);
             return res;
         }
@@ -1360,7 +1396,7 @@ namespace Mkey
         /// <returns></returns>
         public static string ToString(this string s, int field)
         {
-            string form = "{0," + field.ToString() +"}";
+            string form = "{0," + field.ToString() + "}";
             string res = String.Format(form, s);
             return res;
         }
@@ -1394,12 +1430,12 @@ namespace Mkey
                 {
                     int lCount = (field - length);
                     string lSp = new string('*', lCount);
-                    return (s+lSp);
+                    return (s + lSp);
                 }
                 else
                 {
                     string form = "{0," + field.ToString() + "}";
-                    return  String.Format(form, s);
+                    return String.Format(form, s);
                 }
             }
         }
