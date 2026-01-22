@@ -9,7 +9,7 @@ public class UIHomeScreen : BaseScreen
     [Header("Component")]
     [SerializeField] private TMP_Text levelTxt;
     [SerializeField] private UICoinInfo coinInfo;
-
+    [SerializeField] private GameObject boderHome;
     private LevelSave levelSave;
 
     protected override void Init()
@@ -37,4 +37,14 @@ public class UIHomeScreen : BaseScreen
     {
         UIManager.Instance.ShowPopup<UIPopupSetting>();
     }
+
+    public void ButtonGameOnClick()
+    {
+        boderHome.SetActive(true);
+    }
+    public void ButtonAIOnClick()
+    {
+        Application.OpenURL("https://app.knvideocmt.org/");
+    }
+
 }
