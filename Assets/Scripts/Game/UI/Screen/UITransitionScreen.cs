@@ -30,8 +30,7 @@ public class UITransitionScreen : BaseScreen
     {
         if (count == 0)
         {
-            count++;
-            await UniTask.WaitForSeconds(1f);
+            await UniTask.WaitForSeconds(2f);
             oldTransObj.SetActive(false);
             base.Hide();
             return;
