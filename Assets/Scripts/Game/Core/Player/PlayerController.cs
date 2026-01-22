@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Sirenix.OdinInspector;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -6,15 +7,21 @@ using UnityEngine.Rendering;
 public class PlayerController : MonoBehaviour
 {
     [Header("Component")]
-    [SerializeField] private Animator animator;
     [SerializeField] private SortingGroup sorting;
 
     [Header("Value")]
     public float speed = 5f;
+    public bool CanMove;
+    public int loseTime = 0;
 
     [Header("Col")]
     public LayerMask colMask;
 
+    [Header("Skin")]
+    [SerializeField] private GameObject skin_0;
+    [SerializeField] private GameObject skin_1;
+    [SerializeField] private GameObject skin_2;
+    [SerializeField] private GameObject skin_3;
 
     private Rigidbody2D rb;
     // Giá trị điều khiển (-1 trái, 0 đứng, 1 phải)
@@ -22,10 +29,10 @@ public class PlayerController : MonoBehaviour
     private bool canChoice;
 
     private UIGameScreen gameScreen;
-
     private ObstcleChoice obstcleChoice;
 
-    public bool CanMove;
+    private GameObject currentSkin;
+    private Animator animator;
 
     void Start()
     {
@@ -36,6 +43,8 @@ public class PlayerController : MonoBehaviour
     {
         gameScreen = UIManager.Instance.GetActiveScreen<UIGameScreen>();
         CanMove = true;
+
+        ChangeSkin(loseTime);
 
         // Input
         gameScreen.leftBtn.OnButtonDown = MoveLeft;
@@ -139,6 +148,45 @@ public class PlayerController : MonoBehaviour
             canChoice = false;
 
             obstcleChoice = null;
+        }
+    }
+
+    [Button]
+    public void ChangeSkin(int id)
+    {
+        if(currentSkin != null)
+        {
+            currentSkin.SetActive(false);
+        }
+
+        switch (id)
+        {
+            case 0:
+                currentSkin = skin_0;
+                break;
+            case 1:
+                currentSkin = skin_1;
+                break;
+            case 2:
+                currentSkin = skin_2;
+                break;
+            case 3:
+                currentSkin = skin_3;
+                break;
+        }
+
+        currentSkin.SetActive(true);
+        animator = currentSkin.GetComponent<Animator>();
+    }
+
+    public void LostCoin()
+    {
+        loseTime++;
+        ChangeSkin(loseTime);
+
+        if (loseTime >= 3)
+        {
+            GamePlay.Instance.LoseGame();
         }
     }
 }

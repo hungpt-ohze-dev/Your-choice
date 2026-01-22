@@ -198,7 +198,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.5}
+  m_Offset: {x: 0, y: 5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -209,7 +209,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 3}
+  m_Size: {x: 5, y: 10}
   m_EdgeRadius: 0
 --- !u!1 &1739291312461998571
 GameObject:
@@ -678,7 +678,7 @@ Transform:
   m_GameObject: {fileID: 8519840577936805210}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.36, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -725,8 +725,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: d609871bff7c7f049a533871482181b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -976,7 +975,7 @@ PrefabInstance:
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
       propertyPath: percentWin
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1060,7 +1059,7 @@ PrefabInstance:
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
       propertyPath: percentWin
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1144,7 +1143,7 @@ PrefabInstance:
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
       propertyPath: percentWin
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1401,7 +1400,7 @@ PrefabInstance:
     - target: {fileID: 6415788544728843368, guid: 6b1a8961e6a5ed14bb2c4e697ad556d8,
         type: 3}
       propertyPath: percentWin
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

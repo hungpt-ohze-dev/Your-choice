@@ -90,10 +90,7 @@ public class ObstcleChoice : MonoBehaviour
         UIManager.Extra.ShowToast($"You has lost {amount} coin");
         AudioController.Instance.PlaySound(SoundClips.lose);
 
-        if (DataManager.Save.Resource.Coin <= 0)
-        {
-            GamePlay.Instance.LoseGame();
-        }
+        GamePlay.Player.LostCoin();
     }
 
     public void PushLayer()
