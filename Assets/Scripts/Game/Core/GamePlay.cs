@@ -35,6 +35,8 @@ public class GamePlay : MonoSingleton<GamePlay>
     // Audio
     private AudioCase gameMusic;
 
+    private UIGameScreen gameScreen;
+
     protected override void OnInit()
     {
         Application.targetFrameRate = 60;
@@ -99,7 +101,7 @@ public class GamePlay : MonoSingleton<GamePlay>
     {
         canTouch = false;
 
-        var gameScreen = await UIManager.Instance.ShowScreen<UIGameScreen>();
+        gameScreen = await UIManager.Instance.ShowScreen<UIGameScreen>();
         UIManager.Extra.HideTransition();
         canTouch = true;
 
@@ -175,11 +177,14 @@ public class GamePlay : MonoSingleton<GamePlay>
         }
 
         MonoScene.Instance.SetActiveScene(sceneName);
+
+        gameScreen.ShowSlotMachine();
     }
 
     public void RemoveSlotScene()
     {
         SceneManager.UnloadSceneAsync("1_Slot_3X3_FruitHold");
+        gameScreen.ShowMain();
     }    
 
 }

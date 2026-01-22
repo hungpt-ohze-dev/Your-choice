@@ -13,20 +13,26 @@ public class UIGameScreen : BaseScreen
     [Header("Resource")]
     [SerializeField] private UICoinInfo coinInfo;
 
+    [Header("Group")]
+    [SerializeField] private GameObject mainGroup;
+    [SerializeField] private GameObject slotMachineGroup;
+
     private LevelSave levelSave;
 
     protected override void Init()
     {
         levelSave = DataManager.Save.Level;
 
-        //coinInfo.Set();
+        coinInfo.Set();
     }
 
     public override void Show()
     {
         base.Show();
 
-        //coinInfo.UpdateInfo();
+        coinInfo.UpdateInfo();
+
+        ShowMain();
     }
 
     public void OnSetting()
@@ -39,4 +45,15 @@ public class UIGameScreen : BaseScreen
         MainGame.Instance.ResetLevel();
     }
 
+    public void ShowSlotMachine()
+    {
+        mainGroup.SetActive(false);
+        slotMachineGroup.SetActive(true);
+    }
+
+    public void ShowMain()
+    {
+        slotMachineGroup.SetActive(false);
+        mainGroup.SetActive(true);
+    }
 }
